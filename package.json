@@ -1,0 +1,77 @@
+{
+  "name": "prisma-cache",
+  "version": "1.0.0",
+  "description": "A prisma extension for caching queries",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "typesVersions": {
+    "*": {}
+  },
+  "files": [
+    "dist/**/*",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "format": "prettier --write .",
+    "semantic-release": "semantic-release",
+    "test": "npm test",
+    "lint": "gts lint",
+    "clean": "gts clean",
+    "compile": "tsc",
+    "fix": "gts fix",
+    "prepare": "npm run compile",
+    "pretest": "npm run compile",
+    "posttest": "npm run lint"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.18.0",
+    "async-cache-dedupe": "^2.2.0",
+    "ioredis": "^5.4.1",
+    "micromatch": "^4.0.7"
+  },
+  "devDependencies": {
+    "@types/micromatch": "^4.0.9",
+    "@types/node": "^20.16.1",
+    "gts": "^5.3.1",
+    "prettier": "^3.3.3",
+    "semantic-release": "^23.1.1",
+    "tsup": "^8.2.4",
+    "typescript": "^5.5.4"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shikhar97/prisma-cache.git"
+  },
+  "keywords": [
+    "prisma",
+    "redis",
+    "ioredis",
+    "cache",
+    "extension",
+    "middleware"
+  ],
+  "author": {
+    "name": "Shikhar97",
+    "url": "https://github.com/Shikhar97"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Shikhar97/prisma-cache/issues"
+  },
+  "homepage": "https://github.com/Shikhar97/prisma-cache#readme"
+}
