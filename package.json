@@ -1,7 +1,7 @@
 {
-  "name": "prisma-cache",
-  "version": "1.0.0",
-  "description": "A prisma extension for caching queries",
+  "name": "prisma-cache-extension",
+  "version": "1.0.1",
+  "description": "A Prisma extension for caching database queries.",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
