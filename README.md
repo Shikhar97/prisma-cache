@@ -1,24 +1,29 @@
-# prisma-cache
+<img src=https://prismalens.vercel.app/header/logo-dark.svg width="500px"/>
 
-The `prisma-cache` extension for prisma is a comprehensive package that provides a unified solution for optimizing
-database access times, enhancing cache management, and offering versatile functions for efficient Redis/Dragonfly
-database maintenance.
+# Prisma Cache Extension
 
-🚀 If `prisma-cache` proves helpful, consider giving it a
-star! [⭐ Star Me!](https://github.com/Shikhar97/prisma-cache.git)
+[![Build](https://github.com/Shikhar97/prisma-cache/actions/workflows/build.yml/badge.svg)](https://github.com/Shikhar97/prisma-cache/actions/workflows/build.yml)
+![Dynamic JSON Badge](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FShikhar97%2Fprisma-cache%2Fmain%2Fpackage-lock.json&query=%24.version&label=Version)
+
+The `prisma-cache-extension` is a robust package designed to optimize database performance by improving access times,
+streamlining cache management, and offering flexible tools for efficient maintenance.
+
+### Databases supported:
+
+- Redis
 
 ### **Installation**
 
 ##### **Using npm:**
 
 ```bash
-npm install prisma-cache
+npm install prisma-cache-extension
 ```
 
 ##### **Using yarn:**
 
 ```bash
-yarn add prisma-cache
+yarn add prisma-cache-extension
 ```
 
 ### Initializtion of setup
@@ -28,7 +33,7 @@ import {PrismaClient} from '@prisma/client';
 import {Redis} from 'ioredis';
 import {
     PrismaCacheExtension,
-} from 'prisma-cache';
+} from 'prisma-cache-extension';
 
 // Create a Redis client
 const redis = new Redis({
@@ -36,8 +41,6 @@ const redis = new Redis({
     port: env.REDIS_PORT, // Specify Redis port
 });
 ```
-
-\
 
 ### Cache Client Config
 
@@ -70,7 +73,7 @@ return prisma.$extends(
     }));
 ```
 
-### Use case 1: Default Caching Configuration
+### Use case 1: Caching Configuration
 
 ```javascript
 // Example: Query a user and cache the result when caching is enabled
@@ -82,24 +85,14 @@ prisma.user.findUnique({
 });
 
 
-// Example: Exclude automatic caching for a specific operation
+// Disable caching for this operation, if not mentioned
 extendedPrisma.user.findFirst({
     where: {userId: id},
-    // Disable caching for this operation, if not mentioned
+
 });
 ```
 
-### Use case 2: Selective Caching with Custom Configuration
-
-```javascript
-// Example: Query a user and cache the result - with custom configuration
-extendedPrisma.user.findUnique({
-    where: {id},
-    cache: {ttl: 5, key: getCacheKey([{prisma: 'User'}, {userId: id}])},
-});
-```
-
-### Use case 3: Invalidation of Cached Data
+### Use case 2: Invalidation of Cached Data
 
 ```javascript
 // Example: Update a user and invalidate related cache keys
@@ -122,13 +115,14 @@ extendedPrisma.user.update({
 
 ### Key Features
 
-### Why Choose `prisma-cache`?
+### Why Choose `prisma-cache-extension`?
 
 **Effortless Query Caching:** Seamlessly cache your Prisma query results in Redis with minimal setup required.
 
 **Targeted Cache Invalidation:** Easily invalidate specific Prisma queries to maintain accurate and up-to-date data.
 
-**Granular Control:** Adjust caching and invalidation settings for each query, giving you precise control over caching behavior.
+**Granular Control:** Adjust caching and invalidation settings for each query, giving you precise control over caching
+behavior.
 
 **Dynamic Invalidation Strategies:** Apply effective cache invalidation strategies to keep your cached data current.
 
@@ -136,11 +130,14 @@ extendedPrisma.user.update({
 
 ---
 
-**Benefits of `prisma-cache`:**
+**Benefits of `prisma-cache-extension`:**
 
-- **Unified Dependencies:** Replace multiple packages with a single `prisma-cache` dependency, simplifying your setup.
+- **Unified Dependencies:** Replace multiple packages with a single `prisma-cache-extension` dependency, simplifying
+  your setup.
 - **Streamlined Maintenance:** Enjoy centralized updates and improvements, making maintenance more straightforward.
 - **Optimized Codebase:** Reduce redundancy and enhance performance by consolidating your codebase.
-- **Community Engagement:** Connect with the `prisma-cache` community for support and collaborative development.
+- **Community Engagement:** Connect with the `prisma-cache-extension` community for support and collaborative
+  development.
 
-Upgrade to `prisma-cache` today for a more efficient and integrated Redis caching solution.
+Upgrade to `prisma-cache-extension` today for a more efficient and integrated Redis caching solution. If this proves
+helpful, consider giving it a star! [⭐ Star Me!](https://github.com/Shikhar97/prisma-cache.git)
