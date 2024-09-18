@@ -4,6 +4,7 @@
 
 [![Build](https://github.com/Shikhar97/prisma-cache/actions/workflows/build.yml/badge.svg)](https://github.com/Shikhar97/prisma-cache/actions/workflows/build.yml)
 ![Dynamic JSON Badge](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FShikhar97%2Fprisma-cache%2Fmain%2Fpackage-lock.json&query=%24.version&label=Version)
+![GitHub License](https://img.shields.io/github/license/Shikhar97/prisma-cache?label=License)
 
 The `prisma-cache-extension` is a robust package designed to optimize database performance by improving access times,
 streamlining cache management, and offering flexible tools for efficient maintenance.
